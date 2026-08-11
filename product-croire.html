@@ -876,58 +876,370 @@
   .phone-row {
     display: flex;
     gap: 14px;
-    overflow-x: auto;
+    /* overflow-x: auto; */
     padding-bottom: 10px;
     justify-content: space-around;
   }
 
-  .phone-step { flex-shrink: 0; text-align: center;  }
-
-  .step-num {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #215cff;
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 8px;
-  }
-
-  .phone-frame {
-    width: 170px;
-    height: 280px;
-    background: #0d1730;
-    border-radius: 16px;
-    padding: 5px;
-    margin-bottom: 8px;
-  }
-
-  .phone-frame img {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .phone-step span {
-    font-size: 11px;
-    color: #5a6478;
-    font-weight: 500;
-  }
 
 
-     @media only screen and (min-width:1025px){
-         
-    }
   @media (max-width: 900px) {
     /* .app-functions { padding: 60px 0; } */
     .app-grid { grid-template-columns: 1fr; }
   }
+
+
+  /* workflow-features */
+
+    .workflow-features {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin-bottom: 50px;
+  }
+
+  .workflow-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .workflow-feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #e7edff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .workflow-feature-icon i {
+    font-size: 17px;
+    color: #215cff;
+  }
+
+  .workflow-feature-text h4 {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #030817;
+    margin-bottom: 4px;
+  }
+
+  .workflow-feature-text p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #5b6270;
+  }
+
+
+    .workflow-diagram {
+    position: relative;
+    width: 756px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .workflow-diagram .anim-item {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .workflow-diagram.in-view .anim-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .workflow-arrow-h {
+    width: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 68px;
+    position: relative;
+  }
+
+  .arrow-line {
+    width: 48px;
+    height: 2px;
+    background: #b8caff;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+  }
+
+  .origin-left  { transform-origin: left center; }
+  .origin-right { transform-origin: right center; }
+
+  .workflow-diagram.in-view .arrow-line {
+    transform: scaleX(1);
+  }
+
+  .arrow-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #f7931e;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.4);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .workflow-diagram.in-view .arrow-circle {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .workflow-connector-v {
+    position: absolute;
+    right: 78px;
+    top: 232px;
+    width: 2px;
+    height: 110px;
+    background: #b8caff;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.5s ease;
+  }
+
+  .workflow-diagram.in-view .workflow-connector-v {
+    transform: scaleY(1);
+  }
+
+  .workflow-connector-v .arrow-circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+
+  .workflow-diagram.in-view .workflow-connector-v .arrow-circle {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .workflow-diagram .anim-item,
+    .workflow-diagram .arrow-line,
+    .workflow-diagram .arrow-circle,
+    .workflow-diagram .workflow-connector-v {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .workflow-row {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .workflow-card {
+    width: 220px;
+    min-height: 232px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(3, 8, 23, 0.06);
+    text-align: center;
+    padding: 34px 18px 24px;
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .workflow-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(33, 92, 255, 0.16);
+  }
+
+  .workflow-card-badge {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #215cff;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #f4f6fb;
+    z-index: 2;
+  }
+
+  .workflow-card-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    transition: transform 0.35s ease;
+  }
+
+  .workflow-card:hover .workflow-card-icon {
+    transform: scale(1.08);
+  }
+
+  .workflow-card-icon i {
+    font-size: 26px;
+  }
+
+  .icon-blue   { background: #e3ecff; }
+  .icon-blue i   { color: #215cff; }
+
+  .icon-green  { background: #e3f7e9; }
+  .icon-green i  { color: #1f9d55; }
+
+  .icon-purple { background: #ece5fb; }
+  .icon-purple i { color: #6c3fd6; }
+
+  .icon-orange { background: #fdeae0; }
+  .icon-orange i { color: #e0632c; }
+
+  .icon-yellow { background: #fbf3d9; }
+  .icon-yellow i { color: #2f7a3d; }
+
+  .workflow-card-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #030817;
+    margin-bottom: 8px;
+  }
+
+  .workflow-card-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #5b6270;
+  }
+
+  .workflow-row-bottom {
+    margin-top: 110px;
+  }
+
+  .workflow-connector-curve {
+    position: absolute;
+    left: -46px;
+    top: 342px;
+    width: 100px;
+    height: 130px;
+    pointer-events: none;
+  }
+
+  .workflow-check-circle {
+    position: absolute;
+    left: -46px;
+    top: 446px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #215cff;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    box-shadow: 0 6px 16px rgba(33, 92, 255, 0.3);
+    z-index: 2;
+  }
+
+  /* ===== RESPONSIVE ===== */
+
+
+
+  @media (max-width: 800px) {
+
+
+    .workflow-title {
+      font-size: 30px;
+    }
+
+    .workflow-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .workflow-row-bottom {
+      margin-top: 60px;
+      flex-direction: column-reverse;
+    }
+
+    .workflow-arrow-h {
+      margin-top: 0;
+      width: 48px;
+      height: 48px;
+      transform: rotate(90deg);
+    }
+
+    .workflow-connector-v,
+    .workflow-connector-curve,
+    .workflow-check-circle {
+      display: none;
+    }
+
+    .workflow-diagram {
+      width: 100%;
+    }
+
+    .workflow-card {
+      width: 100%;
+    }
+
+    .workflow-diagram .anim-item {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .arrow-line {
+      transform: none;
+      transition: none;
+    }
+
+    .arrow-circle {
+      width: 20px;
+      height: 20px;
+      font-size: 9px;
+      opacity: 1;
+      transform: scale(1);
+      transition: none;
+    }
+  }
+
+  @media only screen and (max-width: 800px){
+    .workflow-arrow-h{
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) and (max-width: 1200px){
+    .app-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px){
+    .workflow-check-circle{
+      left: -28px;
+    }
+
+    .workflow-connector-curve{
+      left: -31px;
+    }
+  }
+
 
   /* ========================================================= */
   /* TRUSTED INDUSTRIES SECTION */
@@ -1891,15 +2203,48 @@ Intelligent Biometric Attendance &amp; Identity Management Platform <br> One uni
       <div>
         <div class="section-title">APP FUNCTIONS</div>
         <h2 class="section-heading">Complete Workflows in Your Hand</span></h2>
+
+        
       </div>
       
     </div>
         <p>Croire mobile application transforms any Android device into a powerful biometric workstation.</p>
         <!-- <a href="#demo" class="btn-mobile">View Mobile App</a> -->
+
+
+              <div class="workflow-features">
+        <div class="workflow-feature">
+          <div class="workflow-feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="workflow-feature-text">
+            <h4>Secure &amp; Reliable</h4>
+            <p>End-to-end encryption and secure data handling.</p>
+          </div>
+        </div>
+
+        <div class="workflow-feature">
+          <div class="workflow-feature-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="workflow-feature-text">
+            <h4>Fast &amp; Efficient</h4>
+            <p>Optimized workflows for quick enrollment and verification.</p>
+          </div>
+        </div>
+
+        <div class="workflow-feature">
+          <div class="workflow-feature-icon"><i class="fa-solid fa-cloud"></i></div>
+          <div class="workflow-feature-text">
+            <h4>Works Anywhere</h4>
+            <p>Turn any Android device into a complete biometric workstation.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
       </div>
 
       <div class="phone-row">
-
+<!-- 
         <div class="phone-step">
           <div class="step-num">1</div>
           <div class="phone-frame"><img src="./assets/croire-app-function/croire-1 1.svg" alt="Operator login screen"></div>
@@ -1967,13 +2312,100 @@ Intelligent Biometric Attendance &amp; Identity Management Platform <br> One uni
           <div class="step-num">12</div>
           <div class="phone-frame"><img src="./assets/croire-app-function/12.jpeg" alt="Profile screen"></div>
           <span>Profile</span>
+        </div> -->
+
+        <div class="workflow-diagram">
+
+        <div class="workflow-row workflow-row-top">
+          <div class="workflow-card anim-item" style="transition-delay: 0s;">
+            <div class="workflow-card-badge">01</div>
+            <div class="workflow-card-icon icon-blue"><i class="fa-solid fa-user-lock"></i></div>
+            <div class="workflow-card-title">Operator Access</div>
+            <div class="workflow-card-desc">Operator logs in securely using authorized credentials.</div>
+          </div>
+
+          <div class="workflow-arrow-h">
+            <div class="arrow-line origin-left" style="transition-delay: 0.7s;"></div>
+            <div class="arrow-circle" style="transition-delay: 1.2s;"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+
+          <div class="workflow-card anim-item" style="transition-delay: 1.5s;">
+            <div class="workflow-card-badge">02</div>
+            <div class="workflow-card-icon icon-green"><i class="fa-solid fa-clipboard-check"></i></div>
+            <div class="workflow-card-title">Examination Setup</div>
+            <div class="workflow-card-desc">Configure exam details, center information and shift timings.</div>
+          </div>
+
+          <div class="workflow-arrow-h">
+            <div class="arrow-line origin-left" style="transition-delay: 2.2s;"></div>
+            <div class="arrow-circle" style="transition-delay: 2.7s;"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+
+          <div class="workflow-card anim-item" style="transition-delay: 3s;">
+            <div class="workflow-card-badge">03</div>
+            <div class="workflow-card-icon icon-purple"><i class="fa-solid fa-address-card"></i></div>
+            <div class="workflow-card-title">Candidate Enrollment</div>
+            <div class="workflow-card-desc">Register candidate details and capture basic information.</div>
+          </div>
         </div>
 
+        <div class="workflow-connector-v" style="transition-delay: 3.7s;">
+          <div class="arrow-circle" style="transition-delay: 4.2s;"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+
+        <div class="workflow-row workflow-row-bottom">
+          <div class="workflow-card anim-item" style="transition-delay: 7.5s;">
+            <div class="workflow-card-badge">06</div>
+            <div class="workflow-card-icon icon-blue"><i class="fa-solid fa-file-circle-check"></i></div>
+            <div class="workflow-card-title">Secure Submission</div>
+            <div class="workflow-card-desc">Verified records are encrypted and securely submitted.</div>
+          </div>
+
+          <div class="workflow-arrow-h">
+            <div class="arrow-line origin-right" style="transition-delay: 6.7s;"></div>
+            <div class="arrow-circle" style="transition-delay: 7.2s;"><i class="fa-solid fa-chevron-left"></i></div>
+          </div>
+
+          <div class="workflow-card anim-item" style="transition-delay: 6s;">
+            <div class="workflow-card-badge">05</div>
+            <div class="workflow-card-icon icon-yellow"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="workflow-card-title">Record Verification</div>
+            <div class="workflow-card-desc">Validate captured data against records in real time.</div>
+          </div>
+
+          <div class="workflow-arrow-h">
+            <div class="arrow-line origin-right" style="transition-delay: 5.2s;"></div>
+            <div class="arrow-circle" style="transition-delay: 5.7s;"><i class="fa-solid fa-chevron-left"></i></div>
+          </div>
+
+          <div class="workflow-card anim-item" style="transition-delay: 4.5s;">
+            <div class="workflow-card-badge">04</div>
+            <div class="workflow-card-icon icon-orange"><i class="fa-solid fa-fingerprint"></i></div>
+            <div class="workflow-card-title">Biometric Capture</div>
+            <div class="workflow-card-desc">Capture fingerprint and facial data for identity verification.</div>
+          </div>
+        </div>
+
+        <svg class="workflow-connector-curve anim-item" style="transition-delay: 8.2s;" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 20 100 C 20 60, 20 20, 90 10" stroke="#b8caff" stroke-width="2" fill="none"/>
+        </svg>
+        <div class="workflow-check-circle anim-item" style="transition-delay: 8.2s;"><i class="fa-solid fa-check"></i></div>
+
       </div>
+
+
+      </div>
+
+
+
+
+      
     </div>
   </div>
 </section>
 
+
+     
 <section class="industries" id="industries">
   <div class="container">
                       <div class="header-row">
@@ -2502,6 +2934,21 @@ ScrollTrigger.create({
 
 //   });
 // });
+
+
+
+       // app-flow-start
+  const workflowDiagram = document.querySelector('.workflow-diagram');
+  const workflowObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        workflowObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+  workflowObserver.observe(workflowDiagram);
+  // app-flow-end
 </script>
 
 <script src="./detail-pages.js"></script>
