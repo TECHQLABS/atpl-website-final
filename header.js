@@ -64,3 +64,42 @@
 
 })();
 
+
+
+
+
+
+
+
+
+
+
+
+    //  abhinnovation-group 
+    
+      const image = document.querySelectorAll(".header-right > a");
+
+const tooltip = document.createElement("div");
+tooltip.classList.add("cursor-tooltip");
+tooltip.textContent = "Visit Abhinnovation Group";
+
+document.body.appendChild(tooltip);
+
+image.forEach( (i) => {
+  i.addEventListener("mouseenter", () => {
+    tooltip.classList.add("show");
+})
+} );
+
+image.forEach( (i) => {
+  i.addEventListener("mousemove", (e) => {
+    tooltip.style.left = `${e.clientX + 12}px`;
+    tooltip.style.top = `${e.clientY + 18}px`;
+})
+} );
+
+image.forEach( (i) => {
+  i.addEventListener("mouseleave", () => {
+    tooltip.classList.remove("show");
+})
+} );
