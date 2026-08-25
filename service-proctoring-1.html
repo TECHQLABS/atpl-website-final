@@ -74,7 +74,7 @@
         grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
         align-items: center;
         gap: clamp(2.5rem, 5vw, 4rem);
-        padding: clamp(5.5rem, 9vw, 7.5rem) 0 clamp(6rem, 10vw, 9rem);
+        padding: clamp(6.5rem, 9vw, 7.5rem) 0 clamp(6rem, 10vw, 9rem);
       }
 
       /* ---------------- Content ---------------- */
@@ -1210,6 +1210,67 @@
       </section>
 
       <!-- <section class="test" style="background-color: #35e0d0; height: 300vh;"></section> -->
+
+
+      <section class="map-section">
+  <div class="header-row">
+    <div>
+      <div class="section-title">Our Presence</div>
+      <h2 class="section-heading">
+        <span>CBT Nodes</span> PAN INDIA
+      </h2>
+    </div>
+  </div>
+
+  <div class="container-map">
+    <svg id="india-map" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg"></svg>
+
+
+  </div>
+  <div class="container">
+        <div class="country-stats">
+  <div class="stat-item">
+    <span class="stat-name">Nepal</span>
+    <span class="stat-sep">—</span>
+    <span class="stat-value">142</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-name">Pakistan</span>
+    <span class="stat-sep">—</span>
+    <span class="stat-value">287</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-name">Sri Lanka</span>
+    <span class="stat-sep">—</span>
+    <span class="stat-value">309</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-name">Bangladesh</span>
+    <span class="stat-sep">—</span>
+    <span class="stat-value">176</span>
+  </div>
+</div>
+  </div>
+</section>
+
+<div class="map-modal-overlay" id="map-modal-overlay" aria-hidden="true">
+  <div class="map-modal-panel" role="dialog" aria-modal="true" aria-labelledby="map-modal-title" tabindex="-1">
+    <button class="map-modal-close" id="map-modal-close" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <h2 class="map-modal-title" id="map-modal-title">State name</h2>
+    <table class="map-modal-table">
+      <thead>
+        <tr><th scope="col">Cities</th><th scope="col">Center Count</th></tr>
+      </thead>
+      <tbody id="map-modal-center-rows"></tbody>
+      <tfoot>
+        <tr><th scope="row">Total</th><td id="map-modal-total">0</td></tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+
+      
 
       <section class="stack-section">
         <div class="container">
