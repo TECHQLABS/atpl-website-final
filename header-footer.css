@@ -415,3 +415,121 @@
 
 
 
+
+
+
+
+      /* abhinnovation-group */
+           header .header-right {
+    display: flex;
+    justify-content: end;
+    gap: 12px;
+    align-items: center;
+}
+
+header .header-right>a {
+    display: flex;
+    align-items: center;
+}
+
+header .header-right img {
+    width: 30px;
+}
+
+
+
+.cursor-tooltip {
+    position: fixed;
+    padding: 7px 12px;
+
+    background: #0b1739;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    border-radius: 6px;
+
+    pointer-events: none;
+    z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.15s ease;
+}
+
+.cursor-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+/* Group logo button */
+.header-right > a:first-child {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #b9cdfb;
+    border-radius: 10px;
+
+    background: rgba(37, 99, 235, 0.03);
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.header-right > a:first-child img {
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Hover */
+.header-right > a:first-child:hover {
+    background: rgba(37, 99, 235, 0.08);
+    border-color: #6f9cff;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+@media only screen and (max-width:900px){
+  header .nav-shell > .header-right{
+    display: none;
+  }
+
+  header .nav-shell .main-nav .header-right{
+    position: fixed;
+    right: 18px;
+    bottom: 22px;
+    left: 18px;
+    z-index: 110;
+  }
+
+  .nav-cta{
+    position: relative;
+    inset: 0;
+  }
+}
+
+@media only screen and (min-width:901px){
+  header .nav-shell .main-nav .header-right{
+    display: none;
+  }
+}
