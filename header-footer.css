@@ -469,6 +469,19 @@ header .header-right img {
 
 
 /* Group logo button */
+
+.header-right > a:first-child {
+    background: #ffffff !important;
+    border-width: 3px;
+}
+
+.header-right > a:first-child img {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+
+
 .header-right > a:first-child {
     width: 46px;
     height: 46px;
