@@ -294,7 +294,7 @@ const STATE_CENTER_DATA = {
     { city: 'Dharamshala', count: 1765 },
     { city: 'Mandi', count: 1100 },
     { city: 'Solan', count: 678 }
-  ]
+  ],
 
   'Rajasthan' : [
   { city: 'Agra', count: 3467 },
