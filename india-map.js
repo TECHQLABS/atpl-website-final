@@ -294,43 +294,7 @@ const STATE_CENTER_DATA = {
     { city: 'Dharamshala', count: 1765 },
     { city: 'Mandi', count: 1100 },
     { city: 'Solan', count: 678 }
-  ],
-
-  'Rajasthan' : [
-  { city: 'Agra', count: 3467 },
-  { city: 'Aligarh', count: 999 },
-  { city: 'Allahabad/Prayagraj', count: 447 },
-  { city: 'Azamgarh', count: 494 },
-  { city: 'Ballia', count: 176 },
-  { city: 'Bareilly', count: 2167 },
-  { city: 'Duhai', count: 329 },
-  { city: 'Etah', count: 0 },
-  { city: 'Faizabad', count: 602 },
-  { city: 'Faizabad/Ayodhya', count: 206 },
-  { city: 'Ghaziabad', count: 3797 },
-  { city: 'Ghazipur', count: 646 },
-  { city: 'Gonda', count: 823 },
-  { city: 'Gorakhpur', count: 1057 },
-  { city: 'Greater Noida', count: 452 },
-  { city: 'Jaunpur', count: 1485 },
-  { city: 'Jhansi', count: 682 },
-  { city: 'Kanpur', count: 4005 },
-  { city: 'Lucknow', count: 9606 },
-  { city: 'Mainpuri', count: 259 },
-  { city: 'Mau', count: 147 },
-  { city: 'Meerut', count: 2587 },
-  { city: 'Moradabad', count: 1742 },
-  { city: 'Muzaffarnagar', count: 564 },
-  { city: 'Noida', count: 447 },
-  { city: 'Paryagraj', count: 470 },
-  { city: 'Pratapgarh', count: 129 },
-  { city: 'Prayagraj', count: 999 },
-  { city: 'Saharanpur', count: 505 },
-  { city: 'Shahjahanpur', count: 259 },
-  { city: 'Shakti Nagar', count: 129 },
-  { city: 'Sultanpur', count: 129 },
-  { city: 'Varanasi', count: 5194 }
-]
+  ]
 };
 
 const overlay = document.getElementById('map-modal-overlay');
