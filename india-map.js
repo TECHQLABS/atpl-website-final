@@ -294,7 +294,20 @@ const STATE_CENTER_DATA = {
     { city: 'Dharamshala', count: 1765 },
     { city: 'Mandi', count: 1100 },
     { city: 'Solan', count: 678 }
-  ]
+  ],
+
+  'Rajasthan': [
+  { city: 'Jaipur', count: 7200 },
+  { city: 'Jodhpur', count: 3900 },
+  { city: 'Kota', count: 3900 },
+  { city: 'Udaipur', count: 3300 },
+  { city: 'Ajmer', count: 3300 },
+  { city: 'Bikaner', count: 2750 },
+  { city: 'Sikar', count: 2750 },
+  { city: 'Alwar', count: 2200 },
+  { city: 'Bharatpur', count: 1900 },
+  { city: 'Bhilwara', count: 1800 }
+]
 };
 
 const overlay = document.getElementById('map-modal-overlay');
